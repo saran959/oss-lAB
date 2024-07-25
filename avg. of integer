@@ -1,0 +1,33 @@
+
+
+//Create a C program that reads an array of integers from the user, calculates the average of the integers, and prints
+//the result.
+#include<stdio.h>
+int main(){
+int n;
+
+float array[100],sum=0.0,avg;
+
+printf("enter the no. of elements :");
+scanf("%d",&n);
+
+while(n>100 || n<1){
+    printf("error!number should be between 1 to 100");
+    printf("enter the no. again:");
+    scanf("%d",&n);
+}
+
+for(int i=0;i<n;++i){
+
+    printf("%d enter no. :",i+1);
+    scanf("%f",&array[i]);
+    sum+=array[i];
+}
+avg=sum/n;
+
+printf("avg. of the integer is:%.2f",avg);
+return 0;
+}
+
+
+
