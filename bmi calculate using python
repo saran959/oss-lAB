@@ -1,0 +1,46 @@
+def calculate_bmi(weight, height):
+    
+    return weight/(height / 100)
+
+def diet_status(bmi):
+
+    if bmi < 18:
+        return "Red: Underweight"
+    elif 18 <= bmi < 25:
+        return "Green: Sufficient consumption"
+    else:
+        return "Orange: Needs more intake"
+
+def main():
+    
+    students = {}
+
+    name = input("Enter student name ")
+    student_class = input("Enter student class ")
+    height = float(input("Enter student height in meters  "))
+    weight = float(input("Enter student weight in kilograms "))
+    sport = input("Enter student sport of interest: ")
+
+    students[name] = {
+        "class": student_class,
+        "height": height,
+        "weight": weight,
+        "sport": sport
+    }
+
+    bmi = calculate_bmi(weight, height)
+
+    status = diet_status(bmi)
+
+    print("\nStudent Information:")
+    print(f"Name: {name}")
+    print(f"Class: {students[name]['class']}")
+    print(f"Height: {students[name]['height']} meters")
+    print(f"Weight: {students[name]['weight']} kilograms")
+    print(f"Sport of Interest: {students[name]['sport']}")
+    print(f"Diet Status: {status}")
+
+if __name__ == "__main__":
+    main()
+
+    
